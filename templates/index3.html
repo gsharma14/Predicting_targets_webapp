@@ -1,0 +1,272 @@
+<html>
+<style>
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=number], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+p {
+ text-align:center
+}
+
+div {
+  width: 500px;	
+  margin: auto;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+body {
+    text-align: center;
+}
+form {
+    display: inline-block;
+}
+
+
+
+</style>
+<body>
+	<h1><p style="text-align:center">Target Prediction Form</p></h1>
+
+<div>
+<form action="/predict" method="POST">
+	<label for="COMPANY_TYPE">Type of Company</label>
+	<select id="COMPANY_TYPE" name="COMPANY_TYPE">
+	<option value="0">Institution</option>
+	<option value="1">Private</option>
+	<option value="2">Public</option>
+	</select>
+	<br>
+	<label for="DRUG_TYPE">Type of Drug</label>
+	<select id="DRUG_TYPE" name="DRUG_TYPE">
+	<option value="0">Generic</option>
+	<option value="1">Innovator</option>
+	<option value="2">Not Given</option>
+	</select>
+	<br>
+	<label for="ACQUIRED">Acquired</label>
+	<select id="ACQUIRED" name="ACQUIRED">
+	<option value="0">No</option>
+	<option value="1">Yes</option>
+	</select>
+	<br>
+	<label for="DRUG_DESCRIPTOR">Description of the Drug</label>
+	<select id="DRUG_DESCRIPTOR" name="DRUG_DESCRIPTOR">
+	<option value="0">Adoptive Cell Therapy</option>
+	<option value="1">Antiinfective Therapy</option>
+	<option value="2">Antiinflammatory Therapy</option>
+	<option value="3">Autologous therapy</option>
+	<option value="4">Chemotherapy</option>
+	<option value="5">DNA-based Targeted therapy</option>
+	<option value="6">Dendritic Cell Therapy</option>
+	<option value="7">Immunotherapy</option>
+	<option value="8">Multispecific Monoclonal Antibody</option>
+	<option value="9">Not Given</option>
+	<option value="10">Opiod/Non-Opiod Painkiller</option>
+	<option value="11">RNA-based Targeted therapy</option>
+	<option value="12">Radiopharmaceutical</option>
+	<option value="13">Recombinant</option>
+	<option value="14">Targeted Therapy</option>
+	</select>
+	<br>
+	<label for="TARGET_TYPE">Type of the Target</label>
+	<select id="TARGET_TYPE" name="TARGET_TYPE">
+	<option value="0">CB-1</option>
+	<option value="1">CD3</option>
+	<option value="2">DNA</option>
+	<option value="3">DNA  Methyltransferase</option>
+	<option value="4">DNA Topoisomerase I</option>
+	<option value="5">DNA Topoisomerase II</option>
+	<option value="6">FCGR2B</option>
+	<option value="7">HSP</option>
+	<option value="8">IL11</option>
+	<option value="9">IL12R</option>
+	<option value="10">IL17RE</option>
+	<option value="11">IL4</option>
+	<option value="12">IL6</option>
+	<option value="13">Unknown</option>
+	<option value="14">kras</option>
+	<option value="15">magl</option>
+	<option value="16">neuropilin</option>
+	<option value="17">tgfb</option>
+	<option value="18">tigit</option>
+	<option value="19">tyk</option>
+	</select>
+	<br>
+	<label for="STATUS">Status of Drugs under defined target</label>
+	<select id="STATUS" name="STATUS">
+	<option value="0">Completed</option>
+	<option value="1">Discontinued</option>
+	<option value="2">Inactive</option>
+	<option value="3">Marketed</option>
+	<option value="4">Ongoing</option>
+	<option value="5">Phase 2</option>
+	<option value="6">Planned</option>
+	<option value="7">Pre-Clinical</option>
+	<option value="8">Unknown</option>
+	</select>
+	<br>
+	<label for="HIGHEST_DEV_STAGE">Highest Stage of Development</label>
+	<select id="HIGHEST_DEV_STAGE" name="HIGHEST_DEV_STAGE">
+	<option value="0">Discontinued</option>
+	<option value="1">Discovery</option>
+	<option value="2">IND/CTA filed</option>
+	<option value="3">Inactive</option>
+	<option value="4">Marketed</option>
+	<option value="5">Phase 1</option>
+	<option value="6">Phase 2</option>
+	<option value="7">Phase 3</option>
+	<option value="8">Phase 4</option>
+	<option value="9">Pre-Clinical</option>
+	</select>
+	<br>
+	<label for="MOL_TYPE">Molecular Type</label>
+	<select id="MOL_TYPE" name="MOL_TYPE">
+	<option value="0">Oligonucleotide</option>
+	<option value="1">Polymer</option>
+	<option value="2"> Protein</option>
+	<option value="3">Cell Therapy</option>
+	<option value="4">Gene Therapy</option>
+	<option value="5">Inhibitor</option>
+	<option value="6">Monoclonal Antibody</option>
+	<option value="7">Oncolytic Virus</option>
+	<option value="8">Small Molecule</option>
+	<option value="9">Unknown</option>
+	<option value="9">Vaccine</option>
+	</select>
+	<br>
+	<label for="DEAL_STATUS">Status of Deals made</label>
+	<select id="DEAL_STATUS" name="DEAL_STATUS">
+	<option value="0">Announced</option>
+	<option value="1">Completed</option>
+	<option value="2">Completed/Announced</option>
+	<option value="3">Completed/Filing</option>
+	<option value="4">Completed/Pricing</option>
+	<option value="5">Terminated</option>
+	<option value="6">Unknown</option>
+	</select>
+	<br>
+	<label for="DEAL_TYPE">Type of Deal that dominated</label>
+	<select id="DEAL_TYPE" name="DEAL_TYPE">
+	<option value="0">A</option>
+	<option value="1">CSA</option>
+	<option value="2">DO</option>
+	<option value="3">EO</option>
+	<option value="4">G</option>
+	<option value="5">LA</option>
+	<option value="6">ND</option>
+	<option value="7">P</option>
+	<option value="8">PE</option>
+	<option value="9">R</option>
+	<option value="9">VF</option>
+	</select>
+	<br>
+	<label for="TWEET_COUNT">Count of Tweets </label>
+	<input type="number" id="TWEET_COUNT" name="TWEET_COUNT">
+	<br>
+	<label for="NUMBER_OF_MONTHS">Number of Months</label>
+	<input type="number" id="NUMBER_OF_MONTHS" name="NUMBER_OF_MONTHS">
+	<br>
+	<label for="MARKET_CAP">Market Cap </label>
+	<input type="number" id="MARKET_CAP" name="MARKET_CAP">
+	<br>
+	<label for="CAGR_2">CAGR for 2 Years</label>
+	<input type="number" id="CAGR_2" name="CAGR_2">
+	<br>
+	<label for="CAGR_5">CAGR for 5 Years</label>
+	<input type="number" id="CAGR_5" name="CAGR_5">
+	<br>
+	<label for="TRIAL_COUNT">Trial count </label>
+	<input type="number" id="TRIAL_COUNT" name="TRIAL_COUNT">
+	<br>
+	<label for="PUBLIC_NEWS">Count of Public news</label>
+	<input type="number" id="PUBLIC_NEWS" name="PUBLIC_NEWS">
+	<br>
+	<label for="PUBLICATION_COUNT">Publications with target type</label>
+	<input type="number" id="PUBLICATION_COUNT" name="PUBLICATION_COUNT">
+	<br>
+	<label for="DEALS">Count of Deals</label>
+	<input type="number" id="DEALS" name="DEALS">
+	<br>
+	<label for="DEAL_AMOUNT">Amount Invested </label>
+	<input type="number" id="DEAL_AMOUNT" name="DEAL_AMOUNT">
+	<br>
+	<label for="THERAPY">Therapy Area</label>
+	<select id="THERAPY" name="THERAPY">
+	<option value="0">CNS</option>
+	<option value="1">Cardiovascular</option>
+	<option value="2">Dermatology</option>
+	<option value="3">Fibrotic Diseases</option>
+	<option value="4">Immunology</option>
+	<option value="5">Infectious Disease</option>
+	<option value="6">Metabolic Disorders</option>
+	<option value="7">Musculoskeletal Disorders</option>
+	<option value="8">Oncology</option>
+	<option value="9">Oncology</option>
+	<option value="10">Respiratory</option>
+	<option value="11">Toxicology</option>
+	</select>
+	<br>
+	<label for="INDICATION">Chosen Indication</label>
+	<select id="INDICATION" name="INDICATION">
+	<option value="0">Cancer</option>
+	<option value="1">Cancer</option>
+	<option value="2">Fibrosis</option>
+	<option value="3">Obesity</option>
+	<option value="4">Solid Tumor</option>
+	<option value="5">AutoImmune Disorders</option>
+	<option value="6">Cancer</option>
+	<option value="7">Digestive Disease</option>
+	<option value="8">Drug Addiction</option>
+	<option value="9">Fibrosis</option>
+	<option value="10">Immunology</option>
+	<option value="11">Lung Disease</option>
+	<option value="12">Neurodegenerative Diseases</option>
+	<option value="13">PTSD/Depression</option>
+	<option value="14">Pain</option>
+	<option value="15">Psoriasis</option>
+	<option value="16">Rheumatoid Arthritis</option>
+	<option value="17">Skin Infections</option>
+	<option value="18">Solid Tumor</option>
+	<option value="19">Solid Tumor/Cancer</option>
+	</select>
+	<br>
+	<br>
+	<input type="submit" value="Submit">
+  </form>
+  <br>
+  <h2><p style="text-align:center"> {{ prediction }}</p></h2>
+</div>
+</body>
+</html>
