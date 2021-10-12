@@ -3,10 +3,10 @@
 
 #### Summary:
 
-##### Problem Statement:
+##### *Problem Statement:*
 Develop an algorithm to predict a Target and/or Mechanism of Action that has a high probability of garnering significant scientific/financial investment and is therefore, or has the potential to be, undervalued.
 <br />
-##### Workflow:
+##### *Workflow:*
 1.Fit and ran a Random Forest Model. It was pickled and saved to be integrated into the application as model.pkl
 
 2.Flask was used to write the code for prediction while integrating the pickled machine learning model into it as app.py, it is hosted on localhost because it is a developer link and to host it we need a hosting application like Heroku or as a streamlit app which is in progress.
@@ -17,9 +17,8 @@ Develop an algorithm to predict a Target and/or Mechanism of Action that has a h
 
 <br />
 
-<br />
-https://user-images.githubusercontent.com/54693803/137012081-c1b3dbc9-e582-4644-bf52-38b59a2c54e2.mov
-<br />
+https://user-images.githubusercontent.com/54693803/137014583-7d801d0e-f65b-47bd-8781-26d28365f62b.mov
+
 
 
 #### References:
